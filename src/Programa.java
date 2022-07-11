@@ -108,6 +108,11 @@ public class Programa {
         return max;
     }
 
+    /**
+     * Suranda brangiausią prekę (objektą)
+     * @param prekes prekių sąrašas
+     * @return brangiausios prekės objektą
+     */
     public static Preke brangiausiosPrekesRadimas(List<Preke> prekes) {
         Preke max = prekes.get(0);
         for (Preke preke : prekes) {
