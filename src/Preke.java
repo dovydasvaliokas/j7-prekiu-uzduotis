@@ -31,6 +31,14 @@ public class Preke {
     }
 
     /**
+     * Sumažina prekės kaina tam tikru procentu.
+     * @param nuolaidaProcentais Nuolaida procentine dalimi (%). Funkcija viduje konvertuoja į dešimtainę trupmeną.
+     */
+    public void pritaikytiNuolaida(double nuolaidaProcentais) {
+        kaina = kaina - kaina * nuolaidaProcentais / 100;
+    }
+
+    /**
      * Grąžina "string" kainos reikšmę, bet suformatuotą iki 2 skaičių po kableliu.
      * Tai tikros reikšmės nepakeičia, todėl skaičiavimai išlieka "tikri", bet tai parodo normalesnę kainą, kuri turi tik du skaičius po kableliu.
      * Jums to nereikėjo daryti, tačiau čia kaip papildomas pavyzdys. Visur kur naudojamas šitas, galite tiesiog naudoti getKaina()
