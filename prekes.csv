@@ -1,0 +1,17 @@
+id,pavadinimas,aprašymas,kaina,kiekis_sandėlyje,kategorija,medžiaga
+1,Kėdė,Medinė kėdė,103.99,5,baldai,medis
+2,Kėdė,Plastikinė sulankstoma kėdė,59.99,1,baldai,plastikas
+3,Kėdė,Metalinė sulankstoma kėdė,29.99,8,baldai,aliuminis
+4,Kėdė,Medinė Kėdė,59.99,0,baldai,medis
+5,Stalas,Medinis stalas,109.99,6,baldai,medis
+6,Stalas,Kavos stalas,705.99,1,baldai,marmuras
+7,Spinta,Medinė spinta,209.99,9,baldai,medis
+8,Spinta,Medinė spinta,159.99,5,baldai,medis
+9,Spinta,Slankiojamųjų durų spinta,399.99,4,baldai,medis
+10,Sofa,Juoda sofa,599.99,5,baldai,dirbtinė oda
+11,Kompiuteris,Nešiojamas kompiuteris Acer,1299.99,12,elektronika,-
+12,Kompiuteris,Nešiojamas kompiuteris Asus,1399.99,7,elektronika,-
+13,Kompiuteris,Stalinis kompiuteris,899.99,2,elektronika,-
+14,Monitorius,144hz BenQ monitorius,359.99,127,elektronika,-
+15,Keptuvė,Blynų keptuvė,39.99,7,virtuvės įrankiai,nerūdijantis plienas
+16,Keptuvė,Wok keptuvė, 59.99,84,virtuvės įrankiai,ketus

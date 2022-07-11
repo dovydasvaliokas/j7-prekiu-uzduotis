@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,7 +25,20 @@ import java.util.Scanner;
 public class Programa {
     public static final String FAILO_PAVADINIMAS = "prekes.csv";
     public static void main(String[] args) {
-        ArrayList<Preke> prekes = nuskaitytiLista(FAILO_PAVADINIMAS);
+
+        ArrayList<Preke> prekes = new ArrayList<>();    // sukuriu naują arraylistą, nes negaliu iš karto saugoti į jį funkciją - nes jį saugosiu "try" bloke. O jeigu bandysiu tik try bloke, tai tada vėliau sakys, jeigu už "try" bloko bandysiu pasiekti šį arraylistą, jog negalima, nes scope difference
+
+
+        // Exception gaudau čia. Vienas dar papildomass pavyzdys, kuris yra gana dažnas
+        // Kai exception gaudome ne funkcijoje, o pasakome, kad ji "throwina" tam tikrą exception ir gaudome tik toje vietoje, kur naudojame tą funkciją
+        try {
+            prekes = nuskaitytiLista(FAILO_PAVADINIMAS);
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Nerastas failas");
+            return;
+        }
         System.out.println("prekes = " + prekes);
 
     }
@@ -32,10 +47,12 @@ public class Programa {
      * Nuskaito prekių listą iš failo
      * @param failas failo pavadinimas
      * @return listą
+     * @throws FileNotFoundException jeigu tokio failo nėra - išmeta exception, kurią reikės gaudyti
      */
-    public static ArrayList<Preke> nuskaitytiLista(String failas) {
+    public static ArrayList<Preke> nuskaitytiLista(String failas) throws FileNotFoundException {
         ArrayList<Preke> list = new ArrayList<>();
-        Scanner sk = new Scanner(failas);
+        File failoObjektas = new File(failas);
+        Scanner sk = new Scanner(failoObjektas);
         sk.nextLine();
         while (sk.hasNextLine()) {
             String eilute = sk.nextLine();
