@@ -45,6 +45,8 @@ public class Programa {
         System.out.println("kiekIsVisoYra = " + kiekIsVisoYra);
         double brangiausiosPrekesKaina = brangiausiosPrekesKaina(prekes);
         System.out.println("brangiausiosPrekesKaina = " + brangiausiosPrekesKaina);
+        Preke brangiausiaPreke = brangiausiosPrekesRadimas(prekes);
+        System.out.println("brangiausiaPreke = " + brangiausiaPreke);
 
     }
 
@@ -101,6 +103,16 @@ public class Programa {
         for (Preke preke : prekes) {
             if (preke.getKaina() > max) {
                 max = preke.getKaina();
+            }
+        }
+        return max;
+    }
+
+    public static Preke brangiausiosPrekesRadimas(List<Preke> prekes) {
+        Preke max = prekes.get(0);
+        for (Preke preke : prekes) {
+            if (preke.getKaina() > max.getKaina()) {
+                max = preke;
             }
         }
         return max;
