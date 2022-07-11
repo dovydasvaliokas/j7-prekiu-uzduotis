@@ -61,6 +61,10 @@ public class Programa {
         System.out.println("Visi baldai: ");
         isvestiListaEilutemis(balduPrekes);
 
+        System.out.println("Kurių daugiau: ");
+        System.out.println("kuriosMedziagosDaugiau(prekes, \"ketus\", \"plastikas\") = " + kuriosMedziagosDaugiau(prekes, "ketus", "plastikas"));
+        System.out.println("kuriosMedziagosDaugiau(prekes, \"medis\", \"metalas\") = " + kuriosMedziagosDaugiau(prekes, "medis", "metalas"));
+
     }
 
     /**
@@ -179,5 +183,34 @@ public class Programa {
             }
         }
         return issfiltruotosPrekes;
+    }
+
+    /**
+     * Suskaičiuoja kiek yra prekių (ne sandėlyje, o modelių) su tam tikra medžiaga
+     * @param prekes visos prekės
+     * @param medziaga ieškoma medžiaga
+     * @return kiekis
+     */
+    public static int kiekMedziagosPrekiu(List<Preke> prekes, String medziaga) {
+        int kiekis = 0;
+        for (Preke preke : prekes) {
+            if (preke.getMedziaga().equalsIgnoreCase(medziaga)) {
+                kiekis++;
+            }
+        }
+        return kiekis;
+    }
+
+    /**
+     * Randa kurios medžiagos prekių yra daugiau sistemoje
+     * @param prekes visos prekės
+     * @param pirmaMedziaga pirma lyginama medžiaga
+     * @param antraMedziaga antra lyginama medžiaga
+     * @return -1 jeigu pirmos daugiau, 0 jeigu lygu, 1 jeigu antros daugiau
+     */
+    public static int kuriosMedziagosDaugiau(List<Preke> prekes, String pirmaMedziaga, String antraMedziaga) {
+        int pirmosMedziagosKiekis = kiekMedziagosPrekiu(prekes, pirmaMedziaga);
+        int antrosMedziagosKiekis = kiekMedziagosPrekiu(prekes, antraMedziaga);
+        return Integer.compare(antrosMedziagosKiekis, pirmosMedziagosKiekis);
     }
 }
