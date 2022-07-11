@@ -41,6 +41,8 @@ public class Programa {
             return;
         }
         isvestiListaEilutemis(prekes);
+        double kiekIsVisoYra = kiekIsVisoSandelyje(prekes);
+        System.out.println("kiekIsVisoYra = " + kiekIsVisoYra);
 
     }
 
@@ -72,5 +74,18 @@ public class Programa {
         for (Preke preke : prekes) {
             System.out.println(preke);
         }
+    }
+
+    /**
+     * Suskaičiuoja kiek iš viso vienetų visų prekių yra sandėliuose
+     * @param prekes prekių sąrašas
+     * @return sveiką skaičių - kiekį
+     */
+    public static int kiekIsVisoSandelyje(List<Preke> prekes) {
+        int suma = 0;
+        for (Preke preke : prekes) {
+            suma += preke.getKiekis();
+        }
+        return suma;
     }
 }
