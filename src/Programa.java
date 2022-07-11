@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
 2. Susikurkite Preke.java papildomą klasę.
@@ -18,7 +21,28 @@
 17. Patobulinkite 16. punktą, jog palygintų ne kiek skirtingų modelių yra daugiausa kažkurios medžiagos, bet pažiūrėtų kurios medžiagos prekių yra daugiausia sandėliuose (įvertinti ir jų kiekį)
  */
 public class Programa {
+    public static final String FAILO_PAVADINIMAS = "prekes.csv";
     public static void main(String[] args) {
+        ArrayList<Preke> prekes = nuskaitytiLista(FAILO_PAVADINIMAS);
+        System.out.println("prekes = " + prekes);
 
+    }
+
+    /**
+     * Nuskaito prekių listą iš failo
+     * @param failas failo pavadinimas
+     * @return listą
+     */
+    public static ArrayList<Preke> nuskaitytiLista(String failas) {
+        ArrayList<Preke> list = new ArrayList<>();
+        Scanner sk = new Scanner(failas);
+        sk.nextLine();
+        while (sk.hasNextLine()) {
+            String eilute = sk.nextLine();
+            String[] stulpeliai = eilute.split(",");
+            Preke laikinaPreke = new Preke(Integer.parseInt(stulpeliai[0]), stulpeliai[1], stulpeliai[2], Double.parseDouble(stulpeliai[3]), Integer.parseInt(stulpeliai[4]), stulpeliai[5], stulpeliai[6]);
+            list.add(laikinaPreke);
+        }
+        return list;
     }
 }
