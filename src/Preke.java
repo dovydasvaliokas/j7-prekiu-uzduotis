@@ -23,6 +23,14 @@ public class Preke {
     }
 
     /**
+     * Patikrina ar prekė yra sandėlyje
+     * @return true, jeigu yra, false jeigu nėra
+     */
+    public boolean arYraSandelyje() {
+        return kiekis > 0;
+    }
+
+    /**
      * Grąžina "string" kainos reikšmę, bet suformatuotą iki 2 skaičių po kableliu.
      * Tai tikros reikšmės nepakeičia, todėl skaičiavimai išlieka "tikri", bet tai parodo normalesnę kainą, kuri turi tik du skaičius po kableliu.
      * Jums to nereikėjo daryti, tačiau čia kaip papildomas pavyzdys. Visur kur naudojamas šitas, galite tiesiog naudoti getKaina()
