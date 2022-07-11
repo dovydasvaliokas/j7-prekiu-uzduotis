@@ -43,6 +43,8 @@ public class Programa {
         isvestiListaEilutemis(prekes);
         double kiekIsVisoYra = kiekIsVisoSandelyje(prekes);
         System.out.println("kiekIsVisoYra = " + kiekIsVisoYra);
+        double brangiausiosPrekesKaina = brangiausiosPrekesKaina(prekes);
+        System.out.println("brangiausiosPrekesKaina = " + brangiausiosPrekesKaina);
 
     }
 
@@ -87,5 +89,20 @@ public class Programa {
             suma += preke.getKiekis();
         }
         return suma;
+    }
+
+    /**
+     * Suranda brangiausios prekės kainą
+     * @param prekes prekių sąrašas
+     * @return brangiausią kainą (double)
+     */
+    public static double brangiausiosPrekesKaina(List<Preke> prekes) {
+        double max = prekes.get(0).getKaina();
+        for (Preke preke : prekes) {
+            if (preke.getKaina() > max) {
+                max = preke.getKaina();
+            }
+        }
+        return max;
     }
 }
