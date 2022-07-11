@@ -48,7 +48,13 @@ public class Programa {
         Preke brangiausiaPreke = brangiausiosPrekesRadimas(prekes);
         System.out.println("brangiausiaPreke = " + brangiausiaPreke);
 
+
         nupigintiBrangesnesUz(prekes, 600, 10);
+        System.out.println("Atpiginus prekes, brangesnes už 600 per 10%:");
+        isvestiListaEilutemis(prekes);
+
+        nupigintiKuriuPavadinimas(prekes, "Stalas", 42.5);
+        System.out.println("Atpiginus prekes, kurių pavadinimas \"Stalas\", per 10%:");
         isvestiListaEilutemis(prekes);
 
     }
@@ -135,6 +141,21 @@ public class Programa {
     public static void nupigintiBrangesnesUz(List<Preke> prekes, double uzKiekBrangiau, double nuolaida) {
         for (Preke preke : prekes) {
             if (preke.getKaina() > uzKiekBrangiau) {
+                preke.pritaikytiNuolaida(nuolaida);
+            }
+        }
+    }
+
+    /**
+     * Atpigina prekes, kurių yra tam tikrass pavadinimas per tam tikrą procentą
+     * @param prekes prekių sąrašas
+     * @param pavadinimas kokio pavadinimo prekes piginti
+     * @param nuolaida per kiek atpiginti
+     */
+    public static void nupigintiKuriuPavadinimas(List<Preke> prekes, String pavadinimas, double nuolaida) {
+        for (Preke preke : prekes) {
+            if (preke.getPavadinimas().equals(pavadinimas)) {
+                System.out.println("Adsfadadfas");
                 preke.pritaikytiNuolaida(nuolaida);
             }
         }
