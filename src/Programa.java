@@ -48,6 +48,9 @@ public class Programa {
         Preke brangiausiaPreke = brangiausiosPrekesRadimas(prekes);
         System.out.println("brangiausiaPreke = " + brangiausiaPreke);
 
+        nupigintiBrangesnesUz(prekes, 600, 10);
+        isvestiListaEilutemis(prekes);
+
     }
 
     /**
@@ -121,5 +124,13 @@ public class Programa {
             }
         }
         return max;
+    }
+
+    public static void nupigintiBrangesnesUz(List<Preke> prekes, double uzKiekBrangiau, double nuolaida) {
+        for (Preke preke : prekes) {
+            if (preke.getKaina() > uzKiekBrangiau) {
+                preke.pritaikytiNuolaida(nuolaida);
+            }
+        }
     }
 }
