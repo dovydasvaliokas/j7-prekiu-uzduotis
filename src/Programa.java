@@ -57,6 +57,10 @@ public class Programa {
         System.out.println("Atpiginus prekes, kurių pavadinimas \"Stalas\", per 10%:");
         isvestiListaEilutemis(prekes);
 
+        ArrayList<Preke> balduPrekes = filtruotiPagalKategorija(prekes, "baldai");
+        System.out.println("Visi baldai: ");
+        isvestiListaEilutemis(balduPrekes);
+
     }
 
     /**
@@ -159,5 +163,21 @@ public class Programa {
                 preke.pritaikytiNuolaida(nuolaida);
             }
         }
+    }
+
+    /**
+     * Išfiltruoja tam tikros kategorijos prekes
+     * @param prekes visos prekės
+     * @param kategorija norima kategorija
+     * @return išfiltruotas prekes
+     */
+    public static ArrayList<Preke> filtruotiPagalKategorija(List<Preke> prekes, String kategorija) {
+        ArrayList<Preke> issfiltruotosPrekes = new ArrayList<>();
+        for (Preke preke : prekes) {
+            if (preke.getKategorija().equalsIgnoreCase(kategorija)) {
+                issfiltruotosPrekes.add(preke);
+            }
+        }
+        return issfiltruotosPrekes;
     }
 }
