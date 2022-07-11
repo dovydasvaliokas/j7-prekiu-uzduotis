@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -39,7 +40,7 @@ public class Programa {
             System.out.println("Nerastas failas");
             return;
         }
-        System.out.println("prekes = " + prekes);
+        isvestiListaEilutemis(prekes);
 
     }
 
@@ -61,5 +62,15 @@ public class Programa {
             list.add(laikinaPreke);
         }
         return list;
+    }
+
+    /**
+     * Išveda listą kiekvieną elementą į atskirą eilutę
+     * @param prekes listas
+     */
+    public static void isvestiListaEilutemis(List<Preke> prekes) {
+        for (Preke preke : prekes) {
+            System.out.println(preke);
+        }
     }
 }
