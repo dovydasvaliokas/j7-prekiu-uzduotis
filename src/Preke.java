@@ -112,7 +112,7 @@ public class Preke {
                 "id=" + id +
                 ", pavadinimas='" + pavadinimas + '\'' +
                 ", aprasymas='" + aprasymas + '\'' +
-                ", kaina=" + kaina +
+                ", kaina=" + getSuformatuotaKaina() +
                 ", kiekis=" + kiekis +
                 ", kategorija='" + kategorija + '\'' +
                 ", medziaga='" + medziaga + '\'' +
