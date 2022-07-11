@@ -126,6 +126,12 @@ public class Programa {
         return max;
     }
 
+    /**
+     * Funkcija atpigina prekes, kurios yra didesnės už tam tikrą kainą, per tam tikrą procento kiekį
+     * @param prekes prekių sąrašas
+     * @param uzKiekBrangiau kaina, už kurią prekės turi būti brangesnės, jog jas atpigintų
+     * @param nuolaida kiek procentų nuolaidą taikyti toms prekėms
+     */
     public static void nupigintiBrangesnesUz(List<Preke> prekes, double uzKiekBrangiau, double nuolaida) {
         for (Preke preke : prekes) {
             if (preke.getKaina() > uzKiekBrangiau) {
